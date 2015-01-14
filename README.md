@@ -2,8 +2,8 @@ KonyMessagingService
 ====================
 
 Application to showcase the featues of Kony Messaging Service:
-- registering a user as an audience member
-- subscribing to the email,push & sms messages.
+- Registering a user as an audience member
+- Subscribing to the email,push & sms messages.
 
 # To run this app
 
