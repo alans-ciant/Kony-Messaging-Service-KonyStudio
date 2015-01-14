@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<pxsObject>
+    <appSmsCode></appSmsCode>
+    <plainxmlservice>
+        <authenticationMode>basic</authenticationMode>
+        <cacheduration></cacheduration>
+        <cacheable>false</cacheable>
+        <dataprovider></dataprovider>
+        <dcResponse/>
+        <encryptPwd>true</encryptPwd>
+        <escapeXML>false</escapeXML>
+        <group>other</group>
+        <headerparam>
+            <category></category>
+            <datatype>string</datatype>
+            <defaultvalue></defaultvalue>
+            <description></description>
+            <encode>true</encode>
+            <format>None</format>
+            <formatvalue></formatvalue>
+            <id>Authorization</id>
+            <invalue></invalue>
+            <name></name>
+            <order></order>
+            <passNull>false</passNull>
+            <recordid></recordid>
+            <smsname></smsname>
+            <source></source>
+            <srcformatvalue></srcformatvalue>
+            <target></target>
+            <targetdatatype></targetdatatype>
+            <testvalue>Basic ZGhhcm1lbmRyYS5rdW1hckBLb255LmNvbTprb255QDA5ODc2</testvalue>
+            <value></value>
+        </headerparam>
+        <httpmethod>GET</httpmethod>
+        <id>GetAccessToken</id>
+        <identityProvider></identityProvider>
+        <identityProviderName></identityProviderName>
+        <ignoreProxy>false</ignoreProxy>
+        <intemplate>Authorization: Basic ZGhhcm1lbmRyYS5rdW1hckBrb255LmNvbTprb255QDA5ODc=</intemplate>
+        <ntlmDomain></ntlmDomain>
+        <ntlmHost></ntlmHost>
+        <outtemplate>{
+   "AccessSecret": "1db816f00982124a3e4d069ddf5eada8cd624f52",
+   "AccessToken": "103e28fd07da33a4ae3e2029eacf0d8f2733e722"
+}</outtemplate>
+        <outTemplateHeader>Cache-control: no-cache="set-cookie"
+transfer-encoding: chunked
+Date: Fri, 26 Dec 2014 05:58:46 GMT
+Set-Cookie: AWSELB=497D0FA90C07B20517FD3F01434D06EBA8D747E2FE973FC89BC1FA145FEDC34C60D14B01F26D2283E817E87EB1372B40626CC4123A348776DDC1A3C1B324DAF7312DB53F75;PATH=/;MAX-AGE=3600
+Connection: keep-alive
+Content-Type: application/json;charset=UTF-8
+Server: Kony
+</outTemplateHeader>
+        <password></password>
+        <postclassname></postclassname>
+        <preclassname></preclassname>
+        <proxyname></proxyname>
+        <proxyport></proxyport>
+        <proxypwd></proxypwd>
+        <proxyuserid></proxyuserid>
+        <responseencoding>UTF-8</responseencoding>
+        <smscode></smscode>
+        <smsenabled>false</smsenabled>
+        <timeout></timeout>
+        <url>https://mobilefabric-demo.messaging.konycloud.com/service/oauth/accesstoken/</url>
+        <urlprovider></urlprovider>
+        <userid></userid>
+    </plainxmlservice>
+</pxsObject>

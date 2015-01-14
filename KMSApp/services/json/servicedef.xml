@@ -1,0 +1,157 @@
+<application desc="" id="kmsapp" name="" smscode="">
+   <app-config>
+      <config-param name="APP_SMS_HEADER" value="null"/>
+   </app-config>
+   <services>
+      <service cachable="false" cacheduration="" id="CreateAudience" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="https://mobilefabric-demo.messaging.konycloud.com/api/v1/audience"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="POST"/>
+            <config-param name="isembedxmlpresent" value="true"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Content-Type" sms-name="" src="" target="" value=""/>
+               <param datatype="string" format="None" formatvalue="" name="AccessToken" sms-name="" src="" target="" value=""/>
+               <param datatype="string" format="None" formatvalue="" name="AccessSecret" sms-name="" src="" target="" value=""/>
+            </header>
+            <template-param name="message" value="{    &quot;active&quot;:$active ,    &quot;email&quot;:$email ,    &quot;emailSubscription&quot;:$emailSubscription ,    &quot;firstName&quot;: $firstName,    &quot;lastName&quot;:$lastName ,    &quot;mobileNumber&quot;:$mobileNumber ,    &quot;pushSubscription&quot;:$pushSubscription ,    &quot;smsSubscription&quot;: $smsSubscription }"/>
+            <param datatype="string" encode="true" name="active" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="email" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="emailSubscription" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="firstName" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="lastName" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="mobileNumber" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="pushSubscription" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="smsSubscription" sms-name="" src="" value=""/>
+         </service-input>
+         <service-output>
+            <param datatype="string" format="None" formatvalue="" name="id" sms-name="" src="/id" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="message" sms-name="" src="/message" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="EditAudience" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="https://mobilefabric-demo.messaging.konycloud.com/api/v1/audience/$audienceID/modify"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value=""/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Content-Type" sms-name="" src="" target="" value="application/json"/>
+               <param datatype="string" format="None" formatvalue="" name="AccessSecret" sms-name="" src="" target="" value=""/>
+               <param datatype="string" format="None" formatvalue="" name="AccessToken" sms-name="" src="" target="" value=""/>
+            </header>
+            <template-param name="message" value="{    &quot;active&quot;: $active,   &quot;email&quot;:$email,    &quot;emailSubscription&quot;: $emailSubscription,    &quot;firstName&quot;: $firstName,    &quot;lastName&quot;: $lastName,    &quot;mobileNumber&quot;: $mobileNumber,    &quot;pushSubscription&quot;: $pushSubscription,    &quot;smsSubscription&quot;: $smsSubscription }"/>
+            <param datatype="string" encode="true" name="active" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="email" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="emailSubscription" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="firstName" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="lastName" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="mobileNumber" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="pushSubscription" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="smsSubscription" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="audienceID" sms-name="" src="" value=""/>
+         </service-input>
+         <service-output>
+            <param datatype="string" format="None" formatvalue="" name="id" sms-name="" src="id" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="message" sms-name="" src="message" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="GetAccessToken" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="https://mobilefabric-demo.messaging.konycloud.com/service/oauth/accesstoken/"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="GET"/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="Authorization" sms-name="" src="" target="" value=""/>
+            </header>
+            <template-param name="message" value="Authorization: Basic ZGhhcm1lbmRyYS5rdW1hckBrb255LmNvbTprb255QDA5ODc="/>
+         </service-input>
+         <service-output>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+      <service cachable="false" cacheduration="" id="GetAudience" passwordencrypted="true" smscode="" smsenabled="false" type="jsonConnector">
+         <service-config>
+            <config-param name="endpointUrl" value="https://mobilefabric-demo.messaging.konycloud.com/api/v1/audience/$audienceID"/>
+            <config-param name="postprocessorname" value=""/>
+            <config-param name="preprocessorname" value=""/>
+            <config-param name="urlprovider" value=""/>
+            <config-param name="dataprovider" value=""/>
+            <config-param name="sockettimeout" value=""/>
+            <config-param name="proxyname" value=""/>
+            <config-param name="proxyport" value=""/>
+            <config-param name="proxyusername" value=""/>
+            <config-param name="http.method" value="GET"/>
+            <config-param name="isembedxmlpresent" value="false"/>
+            <config-param name="ignorehttpproxy" value="false"/>
+            <config-param name="responseEncoding" value="UTF-8"/>
+            <config-param name="server.auth.mode" value="basic"/>
+            <config-param name="server.auth.host" value=""/>
+            <config-param name="server.auth.ntlm.domain" value=""/>
+         </service-config>
+         <service-input>
+            <header>
+               <param datatype="string" format="None" formatvalue="" name="AccessToken" sms-name="" src="" target="" value=""/>
+               <param datatype="string" format="None" formatvalue="" name="AccessSecret" sms-name="" src="" target="" value=""/>
+            </header>
+            <param datatype="string" encode="true" name="audienceID" sms-name="" src="" value=""/>
+         </service-input>
+         <service-output>
+            <param datatype="number" format="None" formatvalue="" name="opstatus" sms-name="" src="" target=""/>
+            <param datatype="string" format="None" formatvalue="" name="errmsg" sms-name="" src="" target=""/>
+            <param datatype="number" format="None" formatvalue="" name="httpStatusCode" sms-name="" src="" target=""/>
+         </service-output>
+      </service>
+   </services>
+</application>
