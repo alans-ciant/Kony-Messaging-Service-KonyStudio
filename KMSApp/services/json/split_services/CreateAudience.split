@@ -270,11 +270,11 @@
         <ntlmDomain></ntlmDomain>
         <ntlmHost></ntlmHost>
         <outtemplate>{
-   "id": "18",
+   "id": "113",
    "message": "Details added successfully"
 }</outtemplate>
-        <outTemplateHeader>Date: Tue, 30 Dec 2014 09:23:03 GMT
-Content-Length: 61
+        <outTemplateHeader>Date: Fri, 23 Jan 2015 10:21:55 GMT
+Content-Length: 62
 Connection: keep-alive
 Content-Type: text/html
 Server: Kony

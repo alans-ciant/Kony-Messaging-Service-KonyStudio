@@ -78,7 +78,7 @@
             <srcformatvalue></srcformatvalue>
             <target></target>
             <targetdatatype></targetdatatype>
-            <testvalue>10</testvalue>
+            <testvalue>113</testvalue>
             <value></value>
         </inparam>
         <intemplate></intemplate>
@@ -87,20 +87,20 @@
         <outtemplate>{
    "active": true,
    "campaignsSent": "",
-   "createdDateStr": "12/13/2014 04:45:57 AM GMT",
+   "createdDateStr": "01/23/2015 10:21:55 AM GMT",
    "email": "Test4@gmail.com",
    "emailSubscription": true,
-   "firstName": "Test",
-   "id": 10,
-   "lastModifiedDateStr": "12/29/2014 09:18:10 AM GMT",
+   "firstName": "first4",
+   "id": 113,
+   "lastModifiedDateStr": "01/23/2015 10:22:39 AM GMT",
    "lastName": "last4",
    "mobileNumber": "+918143382024",
    "pushSubscription": true,
    "pushesSent": 0,
    "smsSubscription": true
 }</outtemplate>
-        <outTemplateHeader>Date: Mon, 29 Dec 2014 11:37:20 GMT
-Content-Length: 387
+        <outTemplateHeader>Date: Fri, 23 Jan 2015 10:23:09 GMT
+Content-Length: 390
 Connection: keep-alive
 Content-Type: text/html
 Server: Kony

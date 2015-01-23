@@ -35,7 +35,7 @@
     <attributes name="certs_trust_store_type" value="JKS"/>
     <attributes name="WP8_ID_CAP_WALLET_PAYMENTINSTRUMENTS" value="false"/>
     <attributes name="appversionkey" value="1.0.0"/>
-    <attributes name="removeprintstatements" value="true"/>
+    <attributes name="removeprintstatements" value="false"/>
     <attributes name="WP8_ID_CAP_GAMERSERVICES" value="true"/>
     <attributes name="BIND_WALLPAPER" value="false"/>
     <attributes name="isNewAppWithRespectToAndroidPackageName" value="true"/>
@@ -97,7 +97,6 @@
     <attributes name="SELECTED_THEME" value="KonyTheme"/>
     <attributes name="GET_TASKS" value="false"/>
     <attributes name="Music_Library" value="true"/>
-    <attributes name="tabletstartupformkey" value="frmHome"/>
     <attributes name="tciphonebasefontsize" value="12"/>
     <attributes name="pathpatternkey" value=""/>
     <attributes name="bb10keystorepassword" value=""/>
@@ -150,7 +149,7 @@
     <attributes name="wp8fliplargekey" value=""/>
     <attributes name="BIND_DEVICE_ADMIN" value="false"/>
     <attributes name="MANAGE_APP_TOKENS" value="false"/>
-    <attributes name="build" value="release"/>
+    <attributes name="build" value="debug"/>
     <attributes name="Pictures_Library_Access" value="true"/>
     <attributes name="RECEIVE_BOOT_COMPLETED" value="false"/>
     <attributes name="tcnth360basefontsize" value="13"/>
@@ -189,7 +188,7 @@
     <attributes name="win8descriptionkey" value="Sample Test Application"/>
     <attributes name="extendTop" value="false"/>
     <attributes name="REORDER_TASKS" value="false"/>
-    <attributes name="iphonebundleidentifierkey" value="com.kone.kmsapp"/>
+    <attributes name="iphonebundleidentifierkey" value="com.kone.testKms"/>
     <attributes name="WP8_ID_CAP_NETWORKING" value="true"/>
     <attributes name="ID_CAP_SENSORS" value="true"/>
     <attributes name="bb10orientationmode" value="Default"/>

@@ -124,14 +124,15 @@ function getAccessToken4()
     			kony.application.dismissLoadingScreen();
     			return;
     		}   		
-    		accessSecret=result["AccessSecret"];
-    		accessToken=result["AccessToken"];
+    		
     		kony.print("\naccessSecret-->"+accessSecret);
     		kony.print("\naccessToken-->"+accessToken);
     		if(result["AccessSecret"]!=undefined)
     		{
+    			accessSecret=result["AccessSecret"];
+    			accessToken=result["AccessToken"];
     			//alert("audienceID:-"+audienceID);
-				if(kony.os.deviceInfo().name=="iPhone"||kony.os.deviceInfo().name=="iPhone Simulator")
+				/*	if(kony.os.deviceInfo().name=="iPhone"||kony.os.deviceInfo().name=="iPhone Simulator")
     			{
     				osVersion=parseInt(kony.os.deviceInfo().version);
     				if(osVersion==8)
@@ -141,7 +142,7 @@ function getAccessToken4()
     					frmProfile.chkBoxPushSubs.setVisibility(false);
     					frmEditProfile.chkBxPushSubs.setVisibility(false);
     				}
-				}
+				}*/
     			if(audienceID==null)
     			{
     			/*if(kony.os.deviceInfo().name=="iPhone"||kony.os.deviceInfo().name=="iPhone Simulator")
@@ -164,14 +165,16 @@ function getAccessToken4()
     		}
     	}
     }
-    var userId=frmLogin.txtBoxLogin.text;
-    	if(userId!=null)
+ // var userId=frmLogin.txtBoxLogin.text;
+    userId="dharmendra.kumar@Kony.com";
+	if(userId!=null)
 		userId=userId.trim();
 	if(userId==""||userId==null){
 		alert("please enter Kony cloud mail Id.");
     	return;
     }
-   var pswd=frmLogin.txtBoxPswd.text;
+   // var pswd=frmLogin.txtBoxPswd.text;
+	pswd="kony@09876";
     if(pswd!=null)
     	pswd=pswd.trim();
     if(pswd==""||pswd==null)

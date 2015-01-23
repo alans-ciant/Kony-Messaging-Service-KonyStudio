@@ -59,10 +59,10 @@ function frmProfilePreShow()
 	frmProfile.lblUsername.text=audienceFirstName+" "+audienceLastName;
 	frmProfile.lblEmail.text="email :"+audienceEmail;
 	frmProfile.lblMobVal.text="mob  :"+audienceMob;
-	if(osVersion==8)
+	/*if(osVersion==8)
 	{
 		frmProfile.chkBoxPushSubs.setVisibility(false);
-	}
+	}*/
 	if(audiencePushSubs==true)
 	{
 		frmEditProfile.chkBxPushSubs.selectedKeys=["1"];

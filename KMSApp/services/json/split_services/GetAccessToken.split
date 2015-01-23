@@ -41,13 +41,13 @@
         <ntlmDomain></ntlmDomain>
         <ntlmHost></ntlmHost>
         <outtemplate>{
-   "AccessSecret": "1db816f00982124a3e4d069ddf5eada8cd624f52",
-   "AccessToken": "103e28fd07da33a4ae3e2029eacf0d8f2733e722"
+   "AccessSecret": "a0530b6f3259443ce38e4eb14339cd8b82dd7ebc",
+   "AccessToken": "7e87bbc7d5eb49a133aee32cd0e27995c69a48fa"
 }</outtemplate>
         <outTemplateHeader>Cache-control: no-cache="set-cookie"
 transfer-encoding: chunked
-Date: Fri, 26 Dec 2014 05:58:46 GMT
-Set-Cookie: AWSELB=497D0FA90C07B20517FD3F01434D06EBA8D747E2FE973FC89BC1FA145FEDC34C60D14B01F26D2283E817E87EB1372B40626CC4123A348776DDC1A3C1B324DAF7312DB53F75;PATH=/;MAX-AGE=3600
+Date: Fri, 23 Jan 2015 10:21:20 GMT
+Set-Cookie: AWSELB=497D0FA90C07B20517FD3F01434D06EBA8D747E2FE359EFCE351A32C41C79CD6C10811B1736D2283E817E87EB1372B40626CC4123A1425EA773A578E80292F8F71AD1A7F99;PATH=/;MAX-AGE=3600
 Connection: keep-alive
 Content-Type: application/json;charset=UTF-8
 Server: Kony

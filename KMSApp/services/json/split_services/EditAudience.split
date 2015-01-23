@@ -276,7 +276,7 @@
             <srcformatvalue></srcformatvalue>
             <target></target>
             <targetdatatype></targetdatatype>
-            <testvalue>10</testvalue>
+            <testvalue>113</testvalue>
             <value></value>
         </inparam>
         <intemplate>{
@@ -292,11 +292,11 @@
         <ntlmDomain></ntlmDomain>
         <ntlmHost></ntlmHost>
         <outtemplate>{
-   "id": "10",
+   "id": "113",
    "message": "Details updated successfully"
 }</outtemplate>
-        <outTemplateHeader>Date: Mon, 29 Dec 2014 11:38:08 GMT
-Content-Length: 63
+        <outTemplateHeader>Date: Fri, 23 Jan 2015 10:22:39 GMT
+Content-Length: 64
 Connection: keep-alive
 Content-Type: text/html
 Server: Kony
