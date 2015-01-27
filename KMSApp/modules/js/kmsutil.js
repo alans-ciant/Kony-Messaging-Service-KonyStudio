@@ -165,17 +165,15 @@ function getAccessToken4()
     		}
     	}
     }
- // var userId=frmLogin.txtBoxLogin.text;
-    userId="dharmendra.kumar@Kony.com";
-	if(userId!=null)
+  var userId=frmLogin.txtBoxLogin.text;
+    	if(userId!=null)
 		userId=userId.trim();
 	if(userId==""||userId==null){
 		alert("please enter Kony cloud mail Id.");
     	return;
     }
-   // var pswd=frmLogin.txtBoxPswd.text;
-	pswd="kony@09876";
-    if(pswd!=null)
+    var pswd=frmLogin.txtBoxPswd.text;
+	if(pswd!=null)
     	pswd=pswd.trim();
     if(pswd==""||pswd==null)
     {
