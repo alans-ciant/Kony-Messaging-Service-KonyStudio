@@ -145,6 +145,17 @@ function getAccessToken4()
 				}*/
     			if(audienceID==null)
     			{
+    			/*if(kony.os.deviceInfo().name=="iPhone"||kony.os.deviceInfo().name=="iPhone Simulator")
+    			{
+    				osVersion=parseInt(kony.os.deviceInfo().version);
+    				if(osVersion==8)
+    				{
+    					audiencePushSubs=false;
+    					frmRegistration.chkBxPushSubs.setVisibility(false);
+    					frmProfile.chkBoxPushSubs.setVisibility(false);
+    					frmEditProfile.chkBxPushSubs.setVisibility(false);
+    				}
+				}*/
     				frmRegistration.show();
     				kony.application.dismissLoadingScreen();
     			}else{
@@ -154,15 +165,16 @@ function getAccessToken4()
     		}
     	}
     }
- var userId=frmLogin.txtBoxLogin.text;
-
+ // var userId=frmLogin.txtBoxLogin.text;
+    userId="dharmendra.kumar@Kony.com";
 	if(userId!=null)
 		userId=userId.trim();
 	if(userId==""||userId==null){
 		alert("please enter Kony cloud mail Id.");
     	return;
     }
-    var pswd=frmLogin.txtBoxPswd.text;
+   // var pswd=frmLogin.txtBoxPswd.text;
+	pswd="kony@09876";
     if(pswd!=null)
     	pswd=pswd.trim();
     if(pswd==""||pswd==null)

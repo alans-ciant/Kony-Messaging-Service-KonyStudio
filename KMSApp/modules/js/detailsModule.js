@@ -52,6 +52,8 @@ function checkBoxToggle(chkBox)
 }
 function appLogOut()
 {
+	frmLogin.txtBoxLogin.text="";
+	frmLogin.txtBoxPswd.text="";
 	frmLogin.show();
 }
 function frmProfilePreShow()
