@@ -166,7 +166,6 @@ function getAccessToken4()
     	}
     }
   var userId=frmLogin.txtBoxLogin.text;
- //   userId="dharmendra.kumar@Kony.com";
 	if(userId!=null)
 		userId=userId.trim();
 	if(userId==""||userId==null){
@@ -174,7 +173,6 @@ function getAccessToken4()
     	return;
     }
    var pswd=frmLogin.txtBoxPswd.text;
-	//pswd="kony@09876";
     if(pswd!=null)
     	pswd=pswd.trim();
     if(pswd==""||pswd==null)
