@@ -166,14 +166,16 @@ function getAccessToken4()
     	}
     }
   var userId=frmLogin.txtBoxLogin.text;
-    	if(userId!=null)
+ //   userId="dharmendra.kumar@Kony.com";
+	if(userId!=null)
 		userId=userId.trim();
 	if(userId==""||userId==null){
 		alert("please enter Kony cloud mail Id.");
     	return;
     }
-    var pswd=frmLogin.txtBoxPswd.text;
-	if(pswd!=null)
+   var pswd=frmLogin.txtBoxPswd.text;
+	//pswd="kony@09876";
+    if(pswd!=null)
     	pswd=pswd.trim();
     if(pswd==""||pswd==null)
     {
@@ -263,7 +265,7 @@ function unsubscribeKMS()
     	kony.print("\n------status------>"+status);
 		if(status==400)
 		{
-			kony.application.dismissLoadingScreen();
+			
 			kony.print("\nUnsubscription result"+JSON.stringify(result));
 			if(result["subscriptionResponse"]!=undefined)
 			{
@@ -274,6 +276,7 @@ function unsubscribeKMS()
 					kony.store.removeItem("ksid");
 				}
 			}
+			kony.application.dismissLoadingScreen();
 		}
 	}
 	kony.print("\n\n<----------in UnsubscribeKMS-------->\n\n");

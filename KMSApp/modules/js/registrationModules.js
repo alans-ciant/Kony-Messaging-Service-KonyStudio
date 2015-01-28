@@ -42,17 +42,19 @@ function register(){
 	function asyncCallback(status, result){
     	kony.print("\n------status------>"+status);
     	if(status==400){
-    		kony.application.dismissLoadingScreen();
+    		
     		kony.print("\n------result------>"+JSON.stringify(result));
     		if(result["opstatus"]==8009)
     		{
     			if(result["message"]!=undefined)
     				updateMessaageAlert(result["message"]);
+    			kony.application.dismissLoadingScreen();
     			//updateMessaageAlert("mobile or email already regestered..");
     			return;
     		}
     		if(result["errmsg"]!=undefined){
     			updateMessaageAlert(result["errmsg"]);
+    			kony.application.dismissLoadingScreen();
     			return;
     		}if(result["opstatus"]==0){	
     			audienceID=result["id"];
@@ -60,9 +62,11 @@ function register(){
     			updateMessaageAlert(""+result["message"]);
     			frmProfilePreShow();
     			frmProfile.show();
+    			kony.application.dismissLoadingScreen();
     			frmRegistration.destroy();
     		}else{
     			updateMessaageAlert("unable to process please try later..");
+    			kony.application.dismissLoadingScreen();
     			return;
     		}
     	}
