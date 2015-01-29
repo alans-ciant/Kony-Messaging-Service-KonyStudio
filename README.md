@@ -11,6 +11,7 @@ Application to showcase the featues of Kony Messaging Service:
 2. Import project to your Kony IDE.
 3. In the project, Go to js folder under modules and open 'configproperties.js' file
 4. Write down below required details in the space provided against each parameter in config.js file.
+	* kmsserverurl :  kony messaging cloud instance url,
 	* senderID 	: clientID generated in google console for google cloud messaging (applicable for android only). 
 	* appId		: appID generated or given in the cloud KMS console.
 5. Build and run the app.
@@ -20,7 +21,7 @@ Application to showcase the featues of Kony Messaging Service:
 config.js:
 
 var KMSPROP = {
-
+		kmsserverurl : "<Enter your messaging cloud instance url...>",
 		senderID :"<Enter your senderID..>", // applicable for android only- clientID generated in google console
 		appID:"<Enter your app id...>", // appID generated or given in the cloud KMS console
 };
