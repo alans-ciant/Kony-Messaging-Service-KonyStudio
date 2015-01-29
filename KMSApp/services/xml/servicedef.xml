@@ -5,7 +5,7 @@
    <services>
       <service cachable="false" cacheduration="" id="subkms" passwordencrypted="true" smscode="" smsenabled="false" type="plainxmlserviceConnector">
          <service-config>
-            <config-param name="endpointUrl" value="https://mobilefabric-demo.messaging.konycloud.com/subscription"/>
+            <config-param name="endpointUrl" value="https://$kmsurl/subscription"/>
             <config-param name="postprocessorname" value=""/>
             <config-param name="preprocessorname" value=""/>
             <config-param name="urlprovider" value=""/>
@@ -29,6 +29,7 @@
             <param datatype="string" encode="true" name="ufid" sms-name="" src="" value=""/>
             <param datatype="string" encode="true" name="sid" sms-name="" src="" value=""/>
             <param datatype="string" encode="true" name="osType" sms-name="" src="" value=""/>
+            <param datatype="string" encode="true" name="kmsurl" sms-name="" src="" value=""/>
          </service-input>
          <service-output>
             <dataset id="subscriptionResponse" src="//subscriptionResponse">
@@ -43,7 +44,7 @@
       </service>
       <service cachable="false" cacheduration="" id="unsubkms" passwordencrypted="true" smscode="" smsenabled="false" type="plainxmlserviceConnector">
          <service-config>
-            <config-param name="endpointUrl" value="https://mobilefabric-demo.messaging.konycloud.com/subscription"/>
+            <config-param name="endpointUrl" value="https://$kmsurl/subscription"/>
             <config-param name="postprocessorname" value=""/>
             <config-param name="preprocessorname" value=""/>
             <config-param name="urlprovider" value=""/>
@@ -65,6 +66,7 @@
             <param datatype="string" encode="true" name="ksId" sms-name="" src="request" value=""/>
             <param datatype="string" encode="true" name="appId" sms-name="" src="request" value=""/>
             <param datatype="string" encode="true" name="deviceId" sms-name="" src="request" value=""/>
+            <param datatype="string" encode="true" name="kmsurl" sms-name="" src="" value=""/>
          </service-input>
          <service-output>
             <dataset id="subscriptionResponse" src="//subscriptionResponse">

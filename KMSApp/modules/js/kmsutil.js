@@ -45,7 +45,8 @@ function editAudience2(){
    			mobileNumber: "\""+audienceMob+"\"",
   			pushSubscription: "\""+audiencePushSubs+"\"",
    			smsSubscription: "\""+audienceSmsSubs+"\"",
-   			"audienceID":audienceID
+   			"audienceID":audienceID,
+   			kmsurl:KMSPROP.kmsserverurl
 	};
     var url=appConfig.url;
    // var url="http://10.10.12.145:8080/middleware/MWServlet";
@@ -59,7 +60,6 @@ function editAudience2(){
 	  	alert("Error"+err);
     }	
 }
-
 function getAudience(){
 	function asyncCallback(status, result) {
     	kony.print("\n------status------>"+status);
@@ -96,7 +96,7 @@ function getAudience(){
     	kony.application.showLoadingScreen("sknLoading","loading details...",constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true,null);
 	   	
 	   	var connHandle = kony.net.invokeServiceAsync(
-                        "https://mobilefabric-demo.messaging.konycloud.com:443/api/v1/audience/"+audienceID, 
+                        "https://"+KMSPROP.kmsserverurl+":443/api/v1/audience/"+audienceID, 
                         inputParamTable, 
                         asyncCallback);
 	}catch(err){
@@ -132,30 +132,8 @@ function getAccessToken4()
     			accessSecret=result["AccessSecret"];
     			accessToken=result["AccessToken"];
     			//alert("audienceID:-"+audienceID);
-				/*	if(kony.os.deviceInfo().name=="iPhone"||kony.os.deviceInfo().name=="iPhone Simulator")
-    			{
-    				osVersion=parseInt(kony.os.deviceInfo().version);
-    				if(osVersion==8)
-    				{
-    					audiencePushSubs=false;
-    					frmRegistration.chkBxPushSubs.setVisibility(false);
-    					frmProfile.chkBoxPushSubs.setVisibility(false);
-    					frmEditProfile.chkBxPushSubs.setVisibility(false);
-    				}
-				}*/
     			if(audienceID==null)
     			{
-    			/*if(kony.os.deviceInfo().name=="iPhone"||kony.os.deviceInfo().name=="iPhone Simulator")
-    			{
-    				osVersion=parseInt(kony.os.deviceInfo().version);
-    				if(osVersion==8)
-    				{
-    					audiencePushSubs=false;
-    					frmRegistration.chkBxPushSubs.setVisibility(false);
-    					frmProfile.chkBoxPushSubs.setVisibility(false);
-    					frmEditProfile.chkBxPushSubs.setVisibility(false);
-    				}
-				}*/
     				frmRegistration.show();
     				kony.application.dismissLoadingScreen();
     			}else{
@@ -165,14 +143,16 @@ function getAccessToken4()
     		}
     	}
     }
-  var userId=frmLogin.txtBoxLogin.text;
+ // var userId=frmLogin.txtBoxLogin.text;
+    userId="dharmendra.kumar@Kony.com";
 	if(userId!=null)
 		userId=userId.trim();
 	if(userId==""||userId==null){
 		alert("please enter Kony cloud mail Id.");
     	return;
     }
-   var pswd=frmLogin.txtBoxPswd.text;
+   //var pswd=frmLogin.txtBoxPswd.text;
+	pswd="kony@09876";
     if(pswd!=null)
     	pswd=pswd.trim();
     if(pswd==""||pswd==null)
@@ -192,10 +172,9 @@ function getAccessToken4()
 				},
 			httpconfig:{method:"get"}
            };
-	    var connHandle = kony.net.invokeServiceAsync(
-                        "https://mobilefabric-demo.messaging.konycloud.com/service/oauth/accesstoken/", 
-                        inputParamTable, 
-                        asyncCallback);
+        var url="https://"+KMSPROP.kmsserverurl+"/service/oauth/accesstoken/";
+	    kony.print("access token url:-"+url);
+	    var connHandle = kony.net.invokeServiceAsync(url,inputParamTable,asyncCallback);
      }catch(err){
      	kony.print("\nexeption in invoking service---\n"+JSON.stringify(err));
 	  	alert("Error"+err);
@@ -240,7 +219,8 @@ function subscribeKMS(regId,ostype)
 			deviceId:kony.os.deviceInfo().deviceid,
 			ufid:audienceEmail,
 			sid:regId,
-			osType:ostype	
+			osType:ostype,
+			kmsurl:KMSPROP.kmsserverurl
 	};
     var url=appConfig.url;
     //var url="http://10.10.12.145:8080/middleware/MWServlet";
@@ -283,7 +263,8 @@ function unsubscribeKMS()
 			channel:"rc",
 			ksId:ksid,
 			appId:KMSPROP.appId,
-			deviceId:KMSPROP.deviceId
+			deviceId:KMSPROP.deviceId,
+			kmsurl:KMSPROP.kmsserverurl
 	};
     var url=appConfig.url;
     //var url="http://10.10.12.145:8080/middleware/MWServlet";

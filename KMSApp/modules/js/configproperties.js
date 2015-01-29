@@ -10,6 +10,7 @@ var KMSPROP = {
 		
 };*/
 KMSPROP = {
+		kmsserverurl:"mobilefabric-demo.messaging.konycloud.com",
 		senderID :"208976063116", // applicable for android only- clientID generated in google console
 		appId:"17797-4209187586" // appID generated or given in the cloud KMS console
 };

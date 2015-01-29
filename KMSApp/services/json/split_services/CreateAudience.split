@@ -80,7 +80,7 @@
         <id>CreateAudience</id>
         <identityProvider></identityProvider>
         <identityProviderName></identityProviderName>
-        <ignoreProxy>false</ignoreProxy>
+        <ignoreProxy>true</ignoreProxy>
         <inparam>
             <category></category>
             <datatype>string</datatype>
@@ -257,6 +257,28 @@
             <testvalue>"true"</testvalue>
             <value></value>
         </inparam>
+        <inparam>
+            <category></category>
+            <datatype>string</datatype>
+            <defaultvalue></defaultvalue>
+            <description></description>
+            <encode>true</encode>
+            <format>None</format>
+            <formatvalue></formatvalue>
+            <id>kmsurl</id>
+            <invalue></invalue>
+            <name></name>
+            <order></order>
+            <passNull>false</passNull>
+            <recordid></recordid>
+            <smsname></smsname>
+            <source></source>
+            <srcformatvalue></srcformatvalue>
+            <target></target>
+            <targetdatatype></targetdatatype>
+            <testvalue>mobilefabric-demo.messaging.konycloud.com</testvalue>
+            <value></value>
+        </inparam>
         <intemplate>{
    "active":$active ,
    "email":$email ,
@@ -269,12 +291,11 @@
 }</intemplate>
         <ntlmDomain></ntlmDomain>
         <ntlmHost></ntlmHost>
-        <outtemplate>{
-   "id": "113",
-   "message": "Details added successfully"
-}</outtemplate>
-        <outTemplateHeader>Date: Fri, 23 Jan 2015 10:21:55 GMT
+        <outtemplate></outtemplate>
+        <outTemplateHeader>Cache-control: no-cache="set-cookie"
+Date: Thu, 29 Jan 2015 09:25:08 GMT
 Content-Length: 62
+Set-Cookie: AWSELB=497D0FA90C07B20517FD3F01434D06EBA8D747E2FE359EFCE351A32C41C79CD6C10811B1736D2283E817E87EB1372B40626CC4123A1425EA773A578E80292F8F71AD1A7F99;PATH=/;MAX-AGE=3600
 Connection: keep-alive
 Content-Type: text/html
 Server: Kony
@@ -334,7 +355,7 @@ Server: Kony
         <smscode></smscode>
         <smsenabled>false</smsenabled>
         <timeout></timeout>
-        <url>https://mobilefabric-demo.messaging.konycloud.com/api/v1/audience</url>
+        <url>https://$kmsurl/api/v1/audience</url>
         <urlprovider></urlprovider>
         <userid></userid>
     </plainxmlservice>

@@ -276,7 +276,29 @@
             <srcformatvalue></srcformatvalue>
             <target></target>
             <targetdatatype></targetdatatype>
-            <testvalue>113</testvalue>
+            <testvalue>125</testvalue>
+            <value></value>
+        </inparam>
+        <inparam>
+            <category></category>
+            <datatype>string</datatype>
+            <defaultvalue></defaultvalue>
+            <description></description>
+            <encode>true</encode>
+            <format>None</format>
+            <formatvalue></formatvalue>
+            <id>kmsurl</id>
+            <invalue></invalue>
+            <name></name>
+            <order></order>
+            <passNull>false</passNull>
+            <recordid></recordid>
+            <smsname></smsname>
+            <source></source>
+            <srcformatvalue></srcformatvalue>
+            <target></target>
+            <targetdatatype></targetdatatype>
+            <testvalue>mobilefabric-demo.messaging.konycloud.com</testvalue>
             <value></value>
         </inparam>
         <intemplate>{
@@ -292,10 +314,10 @@
         <ntlmDomain></ntlmDomain>
         <ntlmHost></ntlmHost>
         <outtemplate>{
-   "id": "113",
+   "id": "125",
    "message": "Details updated successfully"
 }</outtemplate>
-        <outTemplateHeader>Date: Fri, 23 Jan 2015 10:22:39 GMT
+        <outTemplateHeader>Date: Thu, 29 Jan 2015 05:45:20 GMT
 Content-Length: 64
 Connection: keep-alive
 Content-Type: text/html
@@ -356,7 +378,7 @@ Server: Kony
         <smscode></smscode>
         <smsenabled>false</smsenabled>
         <timeout></timeout>
-        <url>https://mobilefabric-demo.messaging.konycloud.com/api/v1/audience/$audienceID/modify</url>
+        <url>https://$kmsurl/api/v1/audience/$audienceID/modify</url>
         <urlprovider></urlprovider>
         <userid></userid>
     </plainxmlservice>

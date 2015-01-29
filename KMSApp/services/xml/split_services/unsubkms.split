@@ -81,6 +81,28 @@
             <testvalue>1243</testvalue>
             <value></value>
         </inparam>
+        <inparam>
+            <category></category>
+            <datatype>string</datatype>
+            <defaultvalue></defaultvalue>
+            <description></description>
+            <encode>true</encode>
+            <format>None</format>
+            <formatvalue></formatvalue>
+            <id>kmsurl</id>
+            <invalue></invalue>
+            <name></name>
+            <order></order>
+            <passNull>false</passNull>
+            <recordid></recordid>
+            <smsname></smsname>
+            <source></source>
+            <srcformatvalue></srcformatvalue>
+            <target></target>
+            <targetdatatype></targetdatatype>
+            <testvalue>mobilefabric-demo.messaging.konycloud.com</testvalue>
+            <value></value>
+        </inparam>
         <intemplate>&lt;subscriptionService&gt;
    &lt;unsubscribe&gt;
       &lt;ksid&gt;$ksId&lt;/ksid&gt;
@@ -203,7 +225,7 @@ Server: Kony
         <smscode></smscode>
         <smsenabled>false</smsenabled>
         <timeout></timeout>
-        <url>https://mobilefabric-demo.messaging.konycloud.com/subscription</url>
+        <url>https://$kmsurl/subscription</url>
         <urlprovider></urlprovider>
         <userid></userid>
     </plainxmlservice>

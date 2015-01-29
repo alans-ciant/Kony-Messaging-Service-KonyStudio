@@ -42,12 +42,13 @@ function register(){
 	function asyncCallback(status, result){
     	kony.print("\n------status------>"+status);
     	if(status==400){
-    		
     		kony.print("\n------result------>"+JSON.stringify(result));
     		if(result["opstatus"]==8009)
     		{
     			if(result["message"]!=undefined)
     				updateMessaageAlert(result["message"]);
+    			else
+    				updateMessaageAlert("email/mobile already registered");
     			kony.application.dismissLoadingScreen();
     			//updateMessaageAlert("mobile or email already regestered..");
     			return;
@@ -62,9 +63,10 @@ function register(){
     			updateMessaageAlert(""+result["message"]);
     			frmProfilePreShow();
     			frmProfile.show();
-    			kony.application.dismissLoadingScreen();
     			frmRegistration.destroy();
-    		}else{
+    			kony.application.dismissLoadingScreen();
+    		}
+    		else{
     			updateMessaageAlert("unable to process please try later..");
     			kony.application.dismissLoadingScreen();
     			return;
@@ -87,7 +89,8 @@ function register(){
    			lastName: "\""+audienceLastName+"\"",
    			mobileNumber: "\""+audienceMob+"\"",
   			pushSubscription: "\""+audiencePushSubs+"\"",
-   			smsSubscription: "\""+audienceSmsSubs+"\""
+   			smsSubscription: "\""+audienceSmsSubs+"\"",
+   			kmsurl:KMSPROP.kmsserverurl
 	};
      var url=appConfig.url;
    // var url="http://10.10.12.145:8080/middleware/MWServlet";

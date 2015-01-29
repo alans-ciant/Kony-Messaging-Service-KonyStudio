@@ -78,7 +78,29 @@
             <srcformatvalue></srcformatvalue>
             <target></target>
             <targetdatatype></targetdatatype>
-            <testvalue>113</testvalue>
+            <testvalue>125</testvalue>
+            <value></value>
+        </inparam>
+        <inparam>
+            <category></category>
+            <datatype>string</datatype>
+            <defaultvalue></defaultvalue>
+            <description></description>
+            <encode>true</encode>
+            <format>None</format>
+            <formatvalue></formatvalue>
+            <id>kmsurl</id>
+            <invalue></invalue>
+            <name></name>
+            <order></order>
+            <passNull>false</passNull>
+            <recordid></recordid>
+            <smsname></smsname>
+            <source></source>
+            <srcformatvalue></srcformatvalue>
+            <target></target>
+            <targetdatatype></targetdatatype>
+            <testvalue>mobilefabric-demo.messaging.konycloud.com</testvalue>
             <value></value>
         </inparam>
         <intemplate></intemplate>
@@ -87,20 +109,20 @@
         <outtemplate>{
    "active": true,
    "campaignsSent": "",
-   "createdDateStr": "01/23/2015 10:21:55 AM GMT",
-   "email": "Test4@gmail.com",
+   "createdDateStr": "01/29/2015 05:43:55 AM GMT",
+   "email": "first.last4@gmail.com",
    "emailSubscription": true,
-   "firstName": "first4",
-   "id": 113,
-   "lastModifiedDateStr": "01/23/2015 10:22:39 AM GMT",
-   "lastName": "last4",
-   "mobileNumber": "+918143382024",
+   "firstName": "first2",
+   "id": 125,
+   "lastModifiedDateStr": "01/29/2015 05:43:55 AM GMT",
+   "lastName": "last2",
+   "mobileNumber": "+914444444445",
    "pushSubscription": true,
    "pushesSent": 0,
    "smsSubscription": true
 }</outtemplate>
-        <outTemplateHeader>Date: Fri, 23 Jan 2015 10:23:09 GMT
-Content-Length: 390
+        <outTemplateHeader>Date: Thu, 29 Jan 2015 05:44:20 GMT
+Content-Length: 396
 Connection: keep-alive
 Content-Type: text/html
 Server: Kony
@@ -116,7 +138,7 @@ Server: Kony
         <smscode></smscode>
         <smsenabled>false</smsenabled>
         <timeout></timeout>
-        <url>https://mobilefabric-demo.messaging.konycloud.com/api/v1/audience/$audienceID</url>
+        <url>https://$kmsurl/api/v1/audience/$audienceID</url>
         <urlprovider></urlprovider>
         <userid></userid>
     </plainxmlservice>
