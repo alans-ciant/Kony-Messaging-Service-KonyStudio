@@ -143,6 +143,8 @@ function getAccessToken4()
     		}
     	}
     }
+    frmLogin.txtBoxLogin.text="dharmendra.kumar@kony.com";
+    frmLogin.txtBoxPswd.text="kony@09876";
   var userId=frmLogin.txtBoxLogin.text;
 	if(userId!=null)
 		userId=userId.trim();
