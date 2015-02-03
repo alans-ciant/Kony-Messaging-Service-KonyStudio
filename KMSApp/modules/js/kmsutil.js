@@ -143,16 +143,16 @@ function getAccessToken4()
     		}
     	}
     }
-    frmLogin.txtBoxLogin.text="dharmendra.kumar@kony.com";
-    frmLogin.txtBoxPswd.text="kony@09876";
-  var userId=frmLogin.txtBoxLogin.text;
+ // var userId=frmLogin.txtBoxLogin.text;
+    userId="dharmendra.kumar@Kony.com";
 	if(userId!=null)
 		userId=userId.trim();
 	if(userId==""||userId==null){
 		alert("please enter Kony cloud mail Id.");
     	return;
     }
-   var pswd=frmLogin.txtBoxPswd.text;
+   //var pswd=frmLogin.txtBoxPswd.text;
+	pswd="kony@09876";
     if(pswd!=null)
     	pswd=pswd.trim();
     if(pswd==""||pswd==null)
@@ -172,7 +172,7 @@ function getAccessToken4()
 				},
 			httpconfig:{method:"get"}
            };
-        var url="https://"+KMSPROP.kmsserverurl+"/service/oauth/accesstoken/";
+        var url="https://"+KMSPROP.kmsserverurl+"/api/v1/oauth/accesstoken";
 	    kony.print("access token url:-"+url);
 	    var connHandle = kony.net.invokeServiceAsync(url,inputParamTable,asyncCallback);
      }catch(err){
