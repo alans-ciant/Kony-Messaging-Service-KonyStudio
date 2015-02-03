@@ -124,14 +124,13 @@ function getAccessToken4()
     			kony.application.dismissLoadingScreen();
     			return;
     		}   		
-    		
-    		kony.print("\naccessSecret-->"+accessSecret);
-    		kony.print("\naccessToken-->"+accessToken);
     		if(result["AccessSecret"]!=undefined)
     		{
     			accessSecret=result["AccessSecret"];
     			accessToken=result["AccessToken"];
     			//alert("audienceID:-"+audienceID);
+    			kony.print("\naccessSecret-->"+accessSecret);
+    			kony.print("\naccessToken-->"+accessToken);
     			if(audienceID==null)
     			{
     				frmRegistration.show();
