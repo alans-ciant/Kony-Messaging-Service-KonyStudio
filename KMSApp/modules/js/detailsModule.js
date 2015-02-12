@@ -1,30 +1,19 @@
 var cb1="1",cb2="2",cb3="3";
 var subs=[];
-function deviceInfo()
-{
-	var devDetail=kony.os.deviceInfo();
-	//kony.print("\n device Info->"+JSON.stringify(kony.os.deviceInfo().osversion));
-	for(var key in devDetail)
-      	{
-      		//if ((key=="model" || key=="deviceid")&&(kony.os.deviceInfo().name == "thinclient"))
-            //{
-            	//Do not include this Key-Value pair for thinclient
-            //}
-            //else
-            //{
-            	//var detail=new Object();
-            	//detail.lblKey=""+key;
-            	//detail.lblVal=""+deviceInfo[key];
-            	//details.push(detail);
-				kony.print("\n"+key+"-"+devDetail[key]);
-           // }
-      	}
-      	//details.push({lblKey:"freeMemory",lblVal:""+kony.os.freeMemory()});
-      	//details.push({lblKey:"userAgent",lblVal:""+kony.os.userAgent()});    
-}
+
+/**
+ * Name		:	showEditForm
+ * Author	:	Kony
+ * Purpose	:	To display the frmEditProfile.
+**/
 function showEditForm(){
 frmEditProfile.show();
 }
+/**
+ * Name		:	checkBoxToggle
+ * Author	:	Kony
+ * Purpose	:	To reset the checkbox to its original status.
+**/
 function checkBoxToggle(chkBox)
 {
 	//kony.print(JSON.stringify(chkBox));
@@ -50,12 +39,22 @@ function checkBoxToggle(chkBox)
 				frmProfile.chkBoxEmailSubs.selectedKeys=[];
 	}
 }
+/**
+ * Name		:	appLogOut
+ * Author	:	Kony
+ * Purpose	:	To logout from the application.
+**/
 function appLogOut()
 {
 	frmLogin.txtBoxLogin.text="";
 	frmLogin.txtBoxPswd.text="";
 	frmLogin.show();
 }
+/**
+ * Name		:	frmProfilePreShow
+ * Author	:	Kony
+ * Purpose	:	For setting some values to the form in the preshow of it.
+**/
 function frmProfilePreShow()
 {
 	frmProfile.lblUsername.text=audienceFirstName+" "+audienceLastName;
@@ -105,6 +104,11 @@ function frmProfilePreShow()
 	else
 		frmEditProfile.listboxActivityStatus.selectedKey="2";
 }
+/**
+ * Name		:	updateActivityStatus
+ * Author	:	Kony
+ * Purpose	:	To update the activity status of the audience member while updating the details.
+**/
 function updateActivityStatus(list){
 	if(list["selectedKeys"][0]=="1")
 		audienceStatus=true;
@@ -112,68 +116,63 @@ function updateActivityStatus(list){
 		audienceStatus=false;
 	//kony.print("\nActivity:-"+audienceStatus);
 }
-function updateSubscription(chkBox)
-{
-	//subs=[];
-	subs=chkBox["selectedKeys"];
-	audiencePushSubs=false;
-	audienceEmailSubs=false;
-	audienceSmsSubs=false;
-	kony.print("\n---checkBox length--->"+subs.length);
-	if(kony.os.deviceInfo().name=="android")
-	{
-		for(var i=0;i<subs.length;i++)
-		{
-			kony.print("\n--chkBox selected keys-->"+subs+"  checked-->"+subs[i]+"  length-->"+subs.length);
-			/*switch(subs[i]){
-				case "1":audiencePushSubs=true;
-					break;
-				case "2":audienceEmailSubs=true;
-					break;
-				case "3":audienceSmsSubs=true;
-			}*/
-		}
-	}else
-	{
-		for(var i=0;i<subs.length;i++)
-		{
-			switch(subs[i])
-			{
-				case "1":audiencePushSubs=true;
-					break;
-				case "2":audienceEmailSubs=true;
-					break;
-				case "3":audienceSmsSubs=true;
-			}
-		}
-	}
-	//kony.print("\n---chkBox--->"+JSON.stringify(chkBox));
-}
+/**
+ * Name		:	updateDeatils
+ * Author	:	Kony
+ * Purpose	:	To update the details oh the audience member.
+**/
 function updateDeatils()
 {
 	audienceFirstName=frmEditProfile.txtBoxFirstName.text;
+	if(audienceFirstName==null||audienceFirstName==""){
+  	alert("please enter first name");
+  	return;
+  	}
 	audienceLastName=frmEditProfile.txtBoxLastName.text;
+	if(audienceLastName==null||audienceLastName==""){
+  	alert("please enter last name");
+  	return;
+  	}
 	audienceEmail=frmEditProfile.txtBoxEmail.text;
+	if(audienceLastName==null||audienceLastName==""){
+  	alert("please enter email id");
+  	return;
+  	}
 	audienceMob=frmEditProfile.txtBoxMob.text;
-	kony.print("\n--audienceFirstName->"+audienceFirstName);
+	if(audienceMob==null||audienceMob==""){
+  	alert("please enter mobile number");
+  	return;
+  	}
+	/*kony.print("\n--audienceFirstName->"+audienceFirstName);
 	kony.print("\n--audienceLastName-->"+audienceLastName);
 	kony.print("\n--audienceEmail-->"+audienceEmail);
 	kony.print("\n--audienceMob-->"+audienceMob);
 	kony.print("\n--audienceStatus-->"+audienceStatus);
 	kony.print("\n--audiencePushSubs-->"+audiencePushSubs);
 	kony.print("\n--audienceEmailSubs-->"+audienceEmailSubs);
-	kony.print("\n--audienceSmsSubs-->"+audienceSmsSubs);
+	kony.print("\n--audienceSmsSubs-->"+audienceSmsSubs);*/
 	ksid=kony.store.getItem("ksid");
 	kony.print("\nksid->"+ksid);
 	if(ksid==null &&(audiencePushSubs==true))
 	{
-		pushRegister();
+		if(kony.os.deviceInfo().name=="iPhone Simulator"){
+			//audiencePushSubs=false;
+			alert("push doesn't support in iPhone simulator.");
+			return;
+		}else{
+			pushRegister();
+		}
 	}else if(ksid!=null &&(audiencePushSubs==false))
 	{
 		pushdeRegister();	
 	}
 	editAudience2();
 }
+/**
+ * Name		:	updateMessaageAlert
+ * Author	:	Kony
+ * Purpose	:	To display the messages as an alert.
+**/
 function updateMessaageAlert(msg)
 {
 	//Defining basicConf parameter for alert

@@ -3,7 +3,12 @@ var audienceID;
 var audienceStatus,audienceFirstName,audienceLastName,audienceEmail,audienceSmsSubs,audiencePushSubs,audienceEmailSubs,audienceMob;
 var osVersion=7;
 var ksid;
-
+/**
+****************************************************************
+*	Name    : editAudience2
+*	Author  : Kony
+*	Purpose : This function will update the details of registered audience member.
+*****************************************************************/
 function editAudience2(){
 	function asyncCallback(status, result) {
     	kony.print("\n------status------>"+status);
@@ -60,6 +65,11 @@ function editAudience2(){
 	  	alert("Error"+err);
     }	
 }
+/**
+ * Name		:	getAudience
+ * Author	:	Kony
+ * Purpose	:	To recevice the details of this audience member from the KMS.
+**/
 function getAudience(){
 	function asyncCallback(status, result) {
     	kony.print("\n------status------>"+status);
@@ -104,6 +114,11 @@ function getAudience(){
 		alert("Error"+err);
     }	
 }
+/**
+ * Name		:	getAccessToken4
+ * Author	:	Kony
+ * Purpose	:	To get the access token,access secret from the KMS by authenticating the user. 
+**/
 function getAccessToken4()
 {
 	function asyncCallback(status, result) 
@@ -129,27 +144,29 @@ function getAccessToken4()
     			accessSecret=result["AccessSecret"];
     			accessToken=result["AccessToken"];
     			//alert("audienceID:-"+audienceID);
-    			kony.print("\naccessSecret-->"+accessSecret);
+				kony.print("\naccessSecret-->"+accessSecret);
     			kony.print("\naccessToken-->"+accessToken);
+    			kony.print("audience ID-->"+audienceID);
     			if(audienceID==null)
     			{
     				frmRegistration.show();
     				kony.application.dismissLoadingScreen();
     			}else{
-    		//frmProfile.show();
-				getAudience();
+					getAudience();
     			}
     		}
     	}
     }
-  	var userId=frmLogin.txtBoxLogin.text;
+ // var userId=frmLogin.txtBoxLogin.text;
+    userId="dharmendra.kumar@Kony.com";
 	if(userId!=null)
 		userId=userId.trim();
 	if(userId==""||userId==null){
 		alert("please enter Kony cloud mail Id.");
     	return;
     }
-   	var pswd=frmLogin.txtBoxPswd.text;
+   //var pswd=frmLogin.txtBoxPswd.text;
+	pswd="kony@09876";
     if(pswd!=null)
     	pswd=pswd.trim();
     if(pswd==""||pswd==null)
@@ -179,6 +196,11 @@ function getAccessToken4()
      }
      //frmRegistration.show();
 }
+/**
+ * Name		:	subscribeKMS
+ * Author	:	kony
+ * Purpose	:	To subscribe for the push notification on the KMS.
+**/
 function subscribeKMS(regId,ostype)
 {
 	if(ostype=="android")
@@ -232,7 +254,11 @@ function subscribeKMS(regId,ostype)
     }	
 	
 }
-
+/**
+ * Name		:	unsubscribeKMS
+ * Author	:	Kony
+ * Purpose	:	To unsubscribe from the push notification.
+**/
 function unsubscribeKMS()
 {
    function asyncCallback(status, result) 
@@ -277,6 +303,11 @@ function unsubscribeKMS()
     }	
 
 }
+/**
+ * Name		:	KMSunregCallback
+ * Author	:	Kony
+ * Purpose	:	Callback for the deregistration event from the KMS.
+**/
 function KMSunregCallback(status,result)
 {
 	kony.print(JSON.stringify(result));
@@ -296,15 +327,25 @@ function KMSunregCallback(status,result)
 			alert("Failed to unsubscribe from Kony Messaging Service!!"+tmp["message"]);
 	}	
 }
+/**
+ * Name		:	pushdeRegister
+ * Author	:	Kony
+ * Purpose	:	To deregister from the GCM/APNS.
+**/
 function pushdeRegister()
 {
-	kony.print("************ JS unregisterFromAPNS() called *********");
+	//kony.print("************ JS unregisterFromAPNS() called *********");
 	kony.application.showLoadingScreen("sknLoading","Deregistering from push notification..",constants.LOADING_SCREEN_POSITION_FULL_SCREEN, true, true,null);
 		kony.push.deRegister({});
 		//ksid=-1;
 		audiencePushSubs=false;
 		
 }
+/**
+ * Name		:	pushRegister
+ * Author	:	Kony
+ * Purpose	:	To register the device to the GCM/APNS.
+**/
 function pushRegister()
 {
 	kony.print("\n\n\n<--------in push register--------->\n\n\n");

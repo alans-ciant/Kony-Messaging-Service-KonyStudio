@@ -2,6 +2,11 @@ audienceStatus=true;
 audienceEmailSubs=true;
 audiencePushSubs=true;
 audienceSmsSubs=true;
+/**
+ * Name		:	registerAudience
+ * Author	:	Kony
+ * Purpose	:	To get the user details to register as the audience member on the KMS.
+**/
 function registerAudience(){
   	audienceFirstName=frmRegistration.txtBoxFirstName.text;
   	if(audienceFirstName==null||audienceFirstName==""){
@@ -23,21 +28,32 @@ function registerAudience(){
   	alert("please enter mobile number");
   	return;
   	}
-   	kony.print("\n--audienceFirstName->"+audienceFirstName);
+   /*	kony.print("\n--audienceFirstName->"+audienceFirstName);
 	kony.print("\n--audienceLastName-->"+audienceLastName);
 	kony.print("\n--audienceEmail-->"+audienceEmail);
 	kony.print("\n--audienceMob-->"+audienceMob);
 	kony.print("\n--audienceStatus-->"+audienceStatus);
 	kony.print("\n--audiencePushSubs-->"+audiencePushSubs);
 	kony.print("\n--audienceEmailSubs-->"+audienceEmailSubs);
-	kony.print("\n--audienceSmsSubs-->"+audienceSmsSubs);
+	kony.print("\n--audienceSmsSubs-->"+audienceSmsSubs);*/
 	if(audiencePushSubs){
 	kony.print("\n--calling pushregister()--");
+	if(kony.os.deviceInfo().name=="iPhone Simulator"){
+		//audiencePushSubs=false;
+		alert("push doesn't support in iPhone simulator.");
+		return;
+	}else{
 		pushRegister();
+	}
 	kony.print("\n--returned from pushregister()--");
 	}
 		register();
 }
+/**
+ * Name		:	register
+ * Author	:	Kony
+ * Purpose	:	To register the user as an audience member on the KMS. 
+**/
 function register(){
 	function asyncCallback(status, result){
     	kony.print("\n------status------>"+status);
@@ -105,22 +121,33 @@ function register(){
 	  	kony.application.dismissLoadingScreen();
 	}	
 }
-function subScription(chkbox)
-{
-	kony.print("CheckBox event-->"+JSON.stringify(chkbox));
-}
+/**
+ * Name		:	pushSubscription
+ * Author	:	Kony
+ * Purpose	:	To handle the checkbox event for the push subscription. 
+**/
 function pushSubscription(chkbox){
 	if(chkbox["selectedKeys"]==null)
 		audiencePushSubs=false;
 	else
 		audiencePushSubs=true;
 }
+/**
+ * Name		:	smsSubscription
+ * Author	:	Kony
+ * Purpose	:	To handle the checkbox event for the sms subscription.
+**/
 function smsSubscription(chkbox){
 	if(chkbox["selectedKeys"]==null)
 		audienceSmsSubs=false;
 	else
 		audienceSmsSubs=true;
 }
+/**
+ * Name		:	emailSubscription
+ * Author	:	Kony
+ * Purpose	:	To handle the checkbox event for the email subscription.
+**/
 function emailSubscription(chkbox){
 	if(chkbox["selectedKeys"]==null)
 		audienceEmailSubs=false;

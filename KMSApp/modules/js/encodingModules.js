@@ -1,3 +1,5 @@
+//To Encode the credentials in base64 format.
+
 var B64 = {
     alphabet: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',
     lookup: null,
